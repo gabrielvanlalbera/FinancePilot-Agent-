@@ -1,0 +1,50 @@
+FINANCE POLICY
+Version: 1.0
+
+1. TRANSACTION MATCHING
+A bank transaction may be considered a valid match only when:
+- The vendor matches the invoice vendor.
+- The transaction reference matches the invoice ID.
+- The transaction amount exactly matches the invoice amount.
+
+2. AUTOMATIC PROCESSING
+Transactions of ₹50,000 or less may be automatically processed when:
+- A valid invoice match exists.
+- There is no amount mismatch.
+- The invoice status is Approved.
+
+3. HUMAN APPROVAL
+Any transaction greater than ₹50,000 requires human approval before it can be processed.
+
+4. AMOUNT MISMATCH
+If the bank transaction amount differs from the invoice amount:
+- Do not automatically process the transaction.
+- Mark it as Mismatch.
+- Investigate the difference.
+- Request human review if the reason cannot be established.
+
+5. MISSING INVOICE
+If a bank transaction does not have a corresponding invoice:
+- Do not process the transaction.
+- Mark it as Needs Review.
+- Report the missing invoice.
+
+6. VERIFICATION
+Every transaction processed by FinancePilot must be independently verified after the ERP update.
+
+7. AUDITABILITY
+FinancePilot must record:
+- The task performed.
+- Actions taken.
+- Decisions made.
+- Tool results.
+- Errors and recovery attempts.
+- Human approvals.
+- Final verification result.
+
+8. SAFETY
+FinancePilot must never:
+- Modify an invoice without authorization.
+- Process a transaction when required information is missing.
+- Bypass the human approval requirement.
+- Mark a transaction as completed without successful verification.
